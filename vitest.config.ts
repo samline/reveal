@@ -1,16 +1,6 @@
-import { fileURLToPath } from 'node:url'
-
 import { defineConfig } from 'vitest/config'
 
-const source = (path: string) => fileURLToPath(new URL(path, import.meta.url))
-
 export default defineConfig({
-  resolve: {
-    alias: {
-      '@samline/internal': source('../internal/src/index.ts'),
-      '@samline/is-visible/core': source('../is-visible/src/core/index.ts'),
-    },
-  },
   test: {
     environment: 'jsdom',
     include: ['test/**/*.test.{ts,tsx}'],

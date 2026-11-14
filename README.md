@@ -2,7 +2,7 @@
 
 Reveal elements as they scroll into view, with CSS effects, cascades, repeat and a CSS-only scrub mode, for vanilla JavaScript, any framework and plain HTML. Content already in view on load is never hidden, and everything stays visible without JavaScript, with reduced motion or when printing.
 
-[Demo](https://samline.github.io/utils/reveal/) · [Examples](https://samline.github.io/utils/reveal/examples/) · [Documentation](https://samline.github.io/utils/docs/reveal/) · [Changelog](CHANGELOG.md)
+[Demo](https://samline.github.io/reveal/) · [Examples](https://samline.github.io/reveal/examples/) · [Documentation](https://samline.github.io/reveal/docs/) · [Changelog](CHANGELOG.md)
 
 ## Table of contents
 
@@ -103,30 +103,30 @@ Seven effects (`up`, `down`, `left`, `right`, `fade`, `zoom`, `blur`) tuned with
 
 ## Documentation
 
-Read the [documentation](https://samline.github.io/utils/docs/reveal/) for the full guides and API contracts, and explore [working examples](https://samline.github.io/utils/reveal/examples/) with complete and separate source files.
+Read the [documentation](https://samline.github.io/reveal/docs/) for the full guides and API contracts, and explore [working examples](https://samline.github.io/reveal/examples/) with complete and separate source files.
 
-| Guide                                                                             | What it covers                                 |
-| --------------------------------------------------------------------------------- | ---------------------------------------------- |
-| [Installation](https://samline.github.io/utils/docs/reveal/getting-started/)      | npm, CDN and the first reveal.                 |
-| [API reference](https://samline.github.io/utils/docs/reveal/reference/api/)       | `reveal`, `autoReveal` and `window.Reveal`.    |
-| [Options](https://samline.github.io/utils/docs/reveal/reference/configuration/)   | Attributes, options, CSS variables and states. |
-| [Effects and timing](https://samline.github.io/utils/docs/reveal/guides/effects/) | Custom effects, cascades and repeat.           |
-| [Scrub mode](https://samline.github.io/utils/docs/reveal/guides/scrub/)           | Scroll-driven reveals without JavaScript.      |
-| [Frameworks](https://samline.github.io/utils/docs/reveal/guides/frameworks/)      | React, Vue, Svelte, Astro and page swaps.      |
+| Guide                                                                       | What it covers                                 |
+| --------------------------------------------------------------------------- | ---------------------------------------------- |
+| [Installation](https://samline.github.io/reveal/docs/getting-started/)      | npm, CDN and the first reveal.                 |
+| [API reference](https://samline.github.io/reveal/docs/reference/api/)       | `reveal`, `autoReveal` and `window.Reveal`.    |
+| [Options](https://samline.github.io/reveal/docs/reference/configuration/)   | Attributes, options, CSS variables and states. |
+| [Effects and timing](https://samline.github.io/reveal/docs/guides/effects/) | Custom effects, cascades and repeat.           |
+| [Scrub mode](https://samline.github.io/reveal/docs/guides/scrub/)           | Scroll-driven reveals without JavaScript.      |
+| [Frameworks](https://samline.github.io/reveal/docs/guides/frameworks/)      | React, Vue, Svelte, Astro and page swaps.      |
 
 ## Changelog
 
-Read [CHANGELOG.md](CHANGELOG.md) or the [published changelog](https://samline.github.io/utils/docs/reveal/changelog/) for release history and explicitly marked breaking and behavior changes. Review the notes before upgrading.
+Read [CHANGELOG.md](CHANGELOG.md) or the [published changelog](https://samline.github.io/reveal/docs/changelog/) for release history and explicitly marked breaking and behavior changes. Review the notes before upgrading.
 
 ## AI agent skill
 
-The [Reveal skill](https://samline.github.io/utils/skills/reveal/SKILL.md) teaches verified package integration. Its maintained [repository source](site/SKILL.md) and website download are the same file. Verify the installed package version before applying its guidance.
+The [Reveal skill](https://samline.github.io/reveal/skills/reveal/SKILL.md) teaches verified package integration. Its maintained [repository source](skills/reveal/SKILL.md) and website download are the same file. Verify the installed package version before applying its guidance.
 
-Download [SKILL.md](https://samline.github.io/utils/skills/reveal/SKILL.md) into a `reveal/` folder in your agent's supported skill directory. For agents that discover project skills from `.agents/skills/`:
+Download [SKILL.md](https://samline.github.io/reveal/skills/reveal/SKILL.md) into a `reveal/` folder in your agent's supported skill directory. For agents that discover project skills from `.agents/skills/`:
 
 ```sh
 mkdir -p .agents/skills/reveal
-curl --fail --location https://samline.github.io/utils/skills/reveal/SKILL.md \
+curl --fail --location https://samline.github.io/reveal/skills/reveal/SKILL.md \
   --output .agents/skills/reveal/SKILL.md
 ```
 

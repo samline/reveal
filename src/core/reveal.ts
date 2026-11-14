@@ -11,7 +11,7 @@ import {
   type AutoInitController,
   type ElementTarget,
 } from '@samline/internal'
-import { observeVisibility } from '@samline/is-visible/core'
+import { observeVisibility } from '@samline/is-visible'
 
 export type { AutoInitController, ElementTarget }
 

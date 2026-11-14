@@ -1,6 +1,6 @@
 import { vi } from 'vitest'
 
-import { resetObservers } from '../../is-visible/src/core/pool.js'
+import { resetObservers } from '@samline/is-visible/testing'
 
 const VIEWPORT = 800
 

@@ -1,15 +1,8 @@
-import { fileURLToPath } from 'node:url'
-
 import { defineConfig } from 'tsup'
 
-// Private helpers and the is-visible observer pool are inlined into every
-// build, so @samline/reveal has no runtime dependencies.
-const source = (path: string) => fileURLToPath(new URL(path, import.meta.url))
-const paths = {
-  '@samline/internal': '../internal/src/index.ts',
-  '@samline/is-visible/core': '../is-visible/src/core/index.ts',
-}
-const alias = Object.fromEntries(Object.entries(paths).map(([name, path]) => [name, source(path)]))
+// @samline/internal and @samline/is-visible are a devDependency bundled into every
+// build (noExternal), so @samline/reveal ships with no runtime dependencies.
+const noExternal = [/^@samline\//]
 
 export default defineConfig([
   {
@@ -18,20 +11,12 @@ export default defineConfig([
       'vanilla/index': 'src/vanilla/index.ts',
     },
     format: ['esm', 'cjs'],
-    dts: {
-      resolve: [/^@samline\/(internal|is-visible)/],
-      compilerOptions: {
-        baseUrl: '.',
-        paths: Object.fromEntries(Object.entries(paths).map(([name, path]) => [name, [path]])),
-      },
-    },
+    dts: { resolve: noExternal },
     sourcemap: true,
     clean: true,
     target: 'es2020',
     treeshake: true,
-    esbuildOptions: options => {
-      options.alias = alias
-    },
+    noExternal,
   },
   {
     // Plain CSS, copied as written so it stays readable and overridable.
@@ -46,9 +31,7 @@ export default defineConfig([
     clean: false,
     target: 'es2020',
     platform: 'browser',
-    esbuildOptions: options => {
-      options.alias = alias
-    },
+    noExternal,
     outExtension: () => ({ js: '.global.js' }),
   },
 ])
