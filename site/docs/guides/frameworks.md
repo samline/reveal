@@ -5,7 +5,7 @@ description: Use @samline/reveal in React, Vue, Svelte and Astro, and keep it wo
 locale: en
 sidebar:
   group: guides
-  order: 4
+  order: 5
 ---
 
 `reveal` returns a cleanup, so it fits every framework's mount and unmount hooks. Import the stylesheet once, for example in your app entry.
