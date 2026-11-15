@@ -1,0 +1,39 @@
+{
+  "package": {
+    "name": "Reveal",
+    "npmName": "@samline/reveal",
+    "version": "1.0.0",
+    "description": "Reveal elements once as they scroll into view, with CSS effects, stagger, repeat and a CSS-only scrub mode, for vanilla JavaScript, any framework and plain HTML.",
+    "author": "Samuel Olvera (samline)",
+    "license": "MIT",
+    "keywords": [
+      "reveal",
+      "scroll",
+      "animation",
+      "intersection-observer",
+      "fade-in",
+      "scroll-driven-animations",
+      "aos"
+    ]
+  },
+  "site": {
+    "url": "https://samline.github.io/reveal/",
+    "repository": "https://github.com/samline/reveal",
+    "namespace": "samline-reveal",
+    "template": false,
+    "credit": "samline"
+  },
+  "theme": {
+    "accentLight": "#bf4532",
+    "accentDark": "#ea6a55"
+  },
+  "delivery": {
+    "cdnScript": "https://cdn.jsdelivr.net/npm/@samline/reveal@1.0.0/dist/browser/reveal.global.js",
+    "cdnStylesheet": "https://cdn.jsdelivr.net/npm/@samline/reveal@1.0.0/dist/style.css"
+  },
+  "dev": {
+    "landingPort": 4440,
+    "docsPort": 4441,
+    "testPort": 4448
+  }
+}
