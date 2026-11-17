@@ -6,6 +6,7 @@ All notable changes to this package. Format: [Keep a Changelog](https://keepacha
 
 ### Changed
 
+- The scroll-driven scrub animation in `style.css` is named `reveal-scrub` instead of `samline-reveal-scrub`, like the `--reveal-*` custom properties. Only CSS that referenced the old keyframes name by hand needs the new one.
 - The package moved from the `samline/utils` monorepo to its own repository, [samline/reveal](https://github.com/samline/reveal). Homepage, repository and documentation links point to the package's own site.
 
 ## [1.0.0] - 2026-11-13
