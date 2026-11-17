@@ -11,7 +11,7 @@ sidebar:
 `data-reveal-scrub` plays the effect along the scroll position instead of on entry: halfway through the range, the element is halfway revealed, and scrolling back reverses it. It is a CSS scroll-driven animation (`animation-timeline: view()`); the script ignores these elements, so it works with the stylesheet alone.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@samline/reveal@1.0.0/dist/style.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@samline/reveal@1.0.1/dist/style.css" />
 
 <figure data-reveal="zoom" data-reveal-scrub>…</figure>
 ```

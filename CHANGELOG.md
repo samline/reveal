@@ -4,6 +4,8 @@ All notable changes to this package. Format: [Keep a Changelog](https://keepacha
 
 ## Unreleased
 
+## [1.0.1] - 2026-11-17
+
 ### Changed
 
 - The scroll-driven scrub animation in `style.css` is named `reveal-scrub` instead of `samline-reveal-scrub`, like the `--reveal-*` custom properties. Only CSS that referenced the old keyframes name by hand needs the new one.

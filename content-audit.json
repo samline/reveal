@@ -1,6 +1,6 @@
 {
   "status": "verified",
-  "packageVersion": "1.0.0",
+  "packageVersion": "1.0.1",
   "capabilityReview": {
     "status": "verified",
     "integrations": [
@@ -62,7 +62,7 @@
   "sources": [
     {
       "source": "README.md",
-      "sha256": "dbb0de90a979a8596a02703017469d381f60e825c94f1f546c5720a428bce017",
+      "sha256": "cf5ad4e97b4f7dc7e7854817865628133b4d5cd5c3b2fa6de25b5f96f604a851",
       "destination": "docs/src/content/docs/index.mdx",
       "reviewed": true
     },
@@ -104,19 +104,19 @@
     },
     {
       "source": "src/style.css",
-      "sha256": "1d0477ae1caa8a2885f2cd150f79410b1a423456faf19fdf0cd8363c42ccbcdb",
+      "sha256": "6514277c24cee6ecd8e3543aa2a4c72e48edf5f5331350de52165e559b813861",
       "destination": "docs/src/content/docs/reference/configuration.md",
       "reviewed": true
     },
     {
       "source": "src/style.css",
-      "sha256": "1d0477ae1caa8a2885f2cd150f79410b1a423456faf19fdf0cd8363c42ccbcdb",
+      "sha256": "6514277c24cee6ecd8e3543aa2a4c72e48edf5f5331350de52165e559b813861",
       "destination": "docs/src/content/docs/guides/effects.md",
       "reviewed": true
     },
     {
       "source": "src/style.css",
-      "sha256": "1d0477ae1caa8a2885f2cd150f79410b1a423456faf19fdf0cd8363c42ccbcdb",
+      "sha256": "6514277c24cee6ecd8e3543aa2a4c72e48edf5f5331350de52165e559b813861",
       "destination": "docs/src/content/docs/guides/scrub.md",
       "reviewed": true
     },
@@ -154,5 +154,5 @@
       "reviewed": true
     }
   ],
-  "notes": "Content reviewed in the utils collection site (1.0.0), then moved to this repository's standalone site on 2026-11-14. Source hashes were recomputed against @samline/reveal@1.0.0."
+  "notes": "Content reviewed in the utils collection site (1.0.0), then moved to this repository's standalone site on 2026-11-14. Source hashes were recomputed against @samline/reveal@1.0.1."
 }
