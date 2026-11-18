@@ -1,2 +1,2 @@
-export { autoReveal, default, reveal } from './vanilla/index.js'
-export * from './core/index.js'
+export * from './vanilla/index.js'
+export { default } from './vanilla/index.js'

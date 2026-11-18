@@ -1,13 +1,9 @@
-export {
-  ATTRIBUTE,
-  REVEAL_EFFECTS,
-  STATE_ATTRIBUTE,
-  autoReveal,
-  reveal,
-  type AutoInitController,
-  type AutoRevealOptions,
-  type ElementTarget,
-  type RevealEffect,
-  type RevealOptions,
-  type RevealState,
+export { REVEAL_EFFECTS, ATTRIBUTE, STATE_ATTRIBUTE } from './reveal.js'
+export type {
+  RevealEffect,
+  RevealState,
+  RevealOptions,
+  AutoRevealOptions,
+  AutoInitController,
+  ElementTarget,
 } from './reveal.js'

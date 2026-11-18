@@ -1,5 +1,5 @@
-import { autoReveal, reveal, REVEAL_EFFECTS } from '../core/reveal.js'
-import type { AutoInitController } from '../core/reveal.js'
+import { autoReveal, reveal, REVEAL_EFFECTS } from '../vanilla/index.js'
+import type { AutoInitController } from '../vanilla/index.js'
 
 /**
  * Classic script for pages without a build step. It reveals every

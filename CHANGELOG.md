@@ -8,6 +8,11 @@ All notable changes to this package. Format: [Keep a Changelog](https://keepacha
 
 - `repeat` with `stagger`: an element revealed on its own after leaving the viewport no longer keeps the cascade delay it got in an earlier batch.
 
+### Changed
+
+- Internal: the DOM controller moved from `src/core` to `src/vanilla`; `src/core` keeps the DOM-free types, constants and helpers. Public entries are unchanged.
+
+
 ## [1.0.1] - 2026-11-17
 
 ### Changed
