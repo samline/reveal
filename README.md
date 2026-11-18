@@ -55,9 +55,9 @@ autoReveal()
 For Shopify, WordPress or plain HTML pages without a build step, load the stylesheet and the browser bundle. It reveals every `[data-reveal]` as soon as the DOM is ready. Pin the version in production.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@samline/reveal@1.0.1/dist/style.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@samline/reveal@1.0.2/dist/style.css" />
 <script
-  src="https://cdn.jsdelivr.net/npm/@samline/reveal@1.0.1/dist/browser/reveal.global.js"
+  src="https://cdn.jsdelivr.net/npm/@samline/reveal@1.0.2/dist/browser/reveal.global.js"
   defer
 ></script>
 ```

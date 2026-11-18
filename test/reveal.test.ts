@@ -206,6 +206,25 @@ describe('stagger', () => {
   })
 })
 
+describe('stagger with repeat', () => {
+  it('drops an earlier cascade delay when the element is revealed alone', async () => {
+    const a = el({ 'data-reveal': '', 'data-reveal-repeat': '' })
+    const b = el({ 'data-reveal': '', 'data-reveal-repeat': '' })
+    reveal([a, b], { stagger: 80 })
+    emit(a, 'below')
+    emit(b, 'below')
+    emit(a, 'in')
+    emit(b, 'in')
+    await tick()
+    expect(b.style.getPropertyValue('--reveal-delay')).toBe('80ms')
+
+    emit(b, 'below')
+    emit(b, 'in')
+    await tick()
+    expect(b.style.getPropertyValue('--reveal-delay')).toBe('')
+  })
+})
+
 describe('reduced motion', () => {
   it('never hides anything when motion is reduced', () => {
     installMotion(true)

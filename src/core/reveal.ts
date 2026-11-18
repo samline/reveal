@@ -103,6 +103,7 @@ interface Tracked {
   group: Element | number
   stagger: number
   baseDelay: number
+  resetDelay: () => void
   start: () => void
 }
 
@@ -121,12 +122,14 @@ const flush = () => {
     if (item.stagger > 0) {
       const index = indexes.get(item.group) ?? 0
       indexes.set(item.group, index + 1)
-      if (index > 0) {
-        ;(item.element as HTMLElement).style.setProperty(
+      // The first of a batch goes back to its own delay: a `repeat` element
+      // revealed alone later must not keep the cascade delay of an earlier batch.
+      if (index === 0) item.resetDelay()
+      else
+        (item.element as HTMLElement).style.setProperty(
           '--reveal-delay',
           ms(item.baseDelay + index * item.stagger)
         )
-      }
     }
     item.start()
   }
@@ -146,6 +149,7 @@ interface ElementSetup {
   group: Element | number
   stagger: number
   baseDelay: number
+  resetDelay: () => void
   restore: () => void
 }
 
@@ -182,11 +186,11 @@ const prepare = (element: HTMLElement, options: RevealOptions): ElementSetup => 
 
   // `--reveal-delay` may also come from your CSS; the cascade adds to it.
   const inlineDelay = element.style.getPropertyValue('--reveal-delay')
-  undo.push(() =>
+  const resetDelay = () =>
     inlineDelay
       ? element.style.setProperty('--reveal-delay', inlineDelay)
       : element.style.removeProperty('--reveal-delay')
-  )
+  undo.push(resetDelay)
 
   // Elements cascade with the others of their closest `data-reveal-stagger`
   // container, or with the other elements of calls using the same `stagger`.
@@ -203,6 +207,7 @@ const prepare = (element: HTMLElement, options: RevealOptions): ElementSetup => 
     group: staggerHost ?? stagger,
     stagger: Math.max(0, stagger),
     baseDelay: Number.isFinite(delay) ? delay : baseDelay,
+    resetDelay,
     restore: () => undo.reverse().forEach(fn => fn()),
   }
 }
@@ -221,10 +226,10 @@ const prepare = (element: HTMLElement, options: RevealOptions): ElementSetup => 
  * Load `@samline/reveal/style.css` for the effects. Returns a cleanup that
  * stops observing and removes everything the call added.
  */
-export function reveal(
+export const reveal = (
   target: ElementTarget = `[${ATTRIBUTE}]`,
   options: RevealOptions = {}
-): () => void {
+): (() => void) => {
   if (!isBrowser()) return noop
 
   const elements = resolveElements(target).filter(
@@ -267,6 +272,7 @@ export function reveal(
       group: setup.group,
       stagger: setup.stagger,
       baseDelay: setup.baseDelay,
+      resetDelay: setup.resetDelay,
       start: () => {
         if (!active || element.getAttribute(STATE_ATTRIBUTE) !== 'pending') return
         setState(element, 'revealing')
@@ -357,12 +363,12 @@ export function reveal(
  * later (AJAX content, framework swaps), and clean up elements that are
  * removed. Returns a controller with `refresh()` and `destroy()`.
  */
-export function autoReveal({
+export const autoReveal = ({
   selector = `[${ATTRIBUTE}]`,
   scope,
   observe = true,
   ...options
-}: AutoRevealOptions = {}): AutoInitController {
+}: AutoRevealOptions = {}): AutoInitController => {
   return autoInit({
     selector,
     observe,

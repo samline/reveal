@@ -20,9 +20,12 @@ const items = ['Fast', 'Typed', 'Tiny', 'Accessible', 'Printable', 'Framework-fr
 
 <script>
   import { autoReveal } from '@samline/reveal'
+  import { preview } from '../../shared/lib/preview'
 
-  const box = document.querySelector<HTMLElement>('[data-preview="cascade"]')!
-  autoReveal({ scope: box, root: box })
+  preview('cascade', root => {
+    const box = root.querySelector<HTMLElement>('[data-preview="cascade"]')!
+    return autoReveal({ scope: box, root: box })
+  })
 </script>
 
 <style>

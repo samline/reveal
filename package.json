@@ -1,6 +1,6 @@
 {
   "name": "@samline/reveal",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Reveal elements once as they scroll into view, with CSS effects, stagger, repeat and a CSS-only scrub mode, for vanilla JavaScript, any framework and plain HTML.",
   "keywords": [
     "reveal",

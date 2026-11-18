@@ -2,7 +2,11 @@
 
 All notable changes to this package. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [semver](https://semver.org/).
 
-## Unreleased
+## [1.0.2] - 2026-11-17
+
+### Fixed
+
+- `repeat` with `stagger`: an element revealed on its own after leaving the viewport no longer keeps the cascade delay it got in an earlier batch.
 
 ## [1.0.1] - 2026-11-17
 

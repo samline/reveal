@@ -1,14 +1,14 @@
 ---
 name: reveal
 description: Use @samline/reveal to reveal elements as they scroll into view with CSS effects, cascades, repeat or a CSS-only scrub mode, in vanilla JS, any framework or plain HTML, without hiding content already on screen.
-package-version: '1.0.1'
+package-version: '1.0.2'
 ---
 
 # @samline/reveal
 
-Build against the installed version; this skill describes 1.0.1.
+Build against the installed version; this skill describes 1.0.2.
 
-- **Install:** `npm install @samline/reveal`, then load `@samline/reveal/style.css` once. Plain HTML: load `https://cdn.jsdelivr.net/npm/@samline/reveal@1.0.1/dist/style.css` and `https://cdn.jsdelivr.net/npm/@samline/reveal@1.0.1/dist/browser/reveal.global.js`; it reveals every `[data-reveal]` on its own (`data-manual` on the script tag, then `Reveal.auto(options)`, to pass options).
+- **Install:** `npm install @samline/reveal`, then load `@samline/reveal/style.css` once. Plain HTML: load `https://cdn.jsdelivr.net/npm/@samline/reveal@1.0.2/dist/style.css` and `https://cdn.jsdelivr.net/npm/@samline/reveal@1.0.2/dist/browser/reveal.global.js`; it reveals every `[data-reveal]` on its own (`data-manual` on the script tag, then `Reveal.auto(options)`, to pass options).
 - **Markup first:** `data-reveal` (empty = `up`, or `down`, `left`, `right`, `fade`, `zoom`, `blur`), `data-reveal-duration`, `data-reveal-delay` (ms), `data-reveal-distance` (CSS length), `data-reveal-repeat`, `data-reveal-stagger="80"` on a container, `data-reveal-scrub` for a CSS-only scroll-linked effect. Attributes win over options.
 - **Script:** `autoReveal(options)` for a whole page (also picks up elements added later; returns `{ refresh, destroy }`), or `const stop = reveal(target, { effect, duration, delay, distance, stagger, repeat, root, rootMargin, threshold, onReveal, onHide })`. Call `stop()` on unmount.
 - **Semantics:** only elements below the fold on load are hidden (`data-reveal-state="pending"`), then `revealing` and `revealed`. In-view content never flashes. Reduced motion, print and no-JS keep everything visible.

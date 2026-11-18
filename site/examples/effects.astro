@@ -21,9 +21,12 @@ const effects = ['up', 'down', 'left', 'right', 'fade', 'zoom'] as const
 
 <script>
   import { autoReveal } from '@samline/reveal'
+  import { preview } from '../../shared/lib/preview'
 
-  const box = document.querySelector<HTMLElement>('[data-preview="effects"]')!
-  autoReveal({ scope: box, root: box })
+  preview('effects', root => {
+    const box = root.querySelector<HTMLElement>('[data-preview="effects"]')!
+    return autoReveal({ scope: box, root: box })
+  })
 </script>
 
 <style>
